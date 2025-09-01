@@ -1,0 +1,10 @@
+select name from Customer 
+where referee_id!=2 or isnull(referee_id); 
+
+
+
+//JUST A NOTE :
+to can solve it with no wrong answer you can not solve it in like 
+where referee_id!=2 or referee_id=null;
+this will give you wrong answer and this because NULL is UNKNOWN value so when you comparing it with any value even if another NULL we can not tell you if the result of the comparsion is true or false
+cause this deponds on the null value and it is unknown so the right solution to get ACC in this one to use IS NULL  
