@@ -1,0 +1,8 @@
+# Write your MySQL query statement below
+select e.name , b.bonus 
+from Employee e left join Bonus b  
+on e.empId = b.empId
+where b.bonus < 1000 OR  b.bonus is NULL;
+
+
+and here the left join is the correct answer and that why cause i need the null values that will appear on it i need the values that will be unmatched in the bonus table when joining happened 
