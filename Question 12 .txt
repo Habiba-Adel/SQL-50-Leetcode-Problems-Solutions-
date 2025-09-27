@@ -1,0 +1,12 @@
+select s.student_id,s.student_name,ss.subject_name, count(e.subject_name) attended_exams 
+from Students s
+cross join Subjects ss left  join Examinations e 
+on s.student_id=e.student_id 
+and ss.subject_name=e.subject_name
+group by s.student_id,s.student_name,ss.subject_name
+order by s.student_id, ss.subject_name;
+
+
+//now there is an important thing here that in the question he wants to get the number of exams each student in the school enter to each subject so we will first need to get all combinations between the students and the subjects
+and i am sure that this combinations will not be duplicate cause each one of it is distinct and then after getting the combination we will need to get who reaaly enter the exam and how times he entered so we will need to 
+make a left join with the examination table to can count each combination happened how many times and make the normak group by and the normal order by 
