@@ -1,0 +1,9 @@
+select s.user_id , round(
+    SUM(case when action="confirmed" then 1 else 0 end) / count(*)
+    ,2) confirmation_rate 
+    from Signups s left join  Confirmations c 
+    on s.user_id = c.user_id 
+    group by s.user_id;
+
+
+//here the inner join will not work correctly cause in the description he wants from us to print the users who even if it doesnot have any record on the confirmaion tables so the best answer or the corrected answer here is the using left join 
